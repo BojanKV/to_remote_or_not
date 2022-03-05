@@ -78,17 +78,32 @@ print("reference_price: {}".format(reference_price))
 print("avg_diesel:      {}".format(avg_diesel))
 
 if reference_price >= avg_diesel:
-  local_index.find(id='answer').string.replace_with('NO!')
-  local_index.find(id='short_explanation').string.replace_with('Diesel price is low today :)')
+
+  decrease = reference_price - avg_diesel
+  decrease_percent = decrease / reference_price * 100
+  decrease_percent = float('{0:.3g}'.format(decrease_percent))
+
+  answer_str = "NO!"
+  short_explanation_str = "Diesel price today is nice and {}% lower today :)".format(decrease_percent)
+
   print("NO")
-elif (reference_price *1.4) <= avg_diesel:
-  local_index.find(id='answer').string.replace_with('HELL YES!')
-  local_index.find(id='short_explanation').string.replace_with('Diesel price at least 40% higher than times before corona!')
-  print("HELL YES")
 else:
-  local_index.find(id='answer').string.replace_with('YES!')
-  local_index.find(id='short_explanation').string.replace_with('Diesel price higher than times before corona')
+
+  increase = avg_diesel - reference_price
+  increase_percent = increase / reference_price * 100
+  increase_percent = float('{0:.3g}'.format(increase_percent))
+
+  if increase_percent >=50:
+    answer_str = "HELL YES!"
+  else:
+    answer_str = "YES!"
+
+  short_explanation_str = "Diesel price higher {}% than at the beginning of corona.".format(increase_percent)
+
   print("YES")
+
+local_index.find(id='answer').string.replace_with(answer_str)
+local_index.find(id='short_explanation').string.replace_with(short_explanation_str)
 
 # write back new page
 
