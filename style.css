@@ -1,0 +1,71 @@
+body {
+	background: linear-gradient(-45deg, #ee7752, #e73c7e, rgb(253, 81, 43), rgb(255,0,0));
+	background-size: 400% 400%;
+	animation: gradient 15s ease infinite;
+	height: 100vh;
+
+	font-family: "Century Gothic", CenturyGothic, "Apple Gothic", sans-serif;
+	font-size: x-large;
+  text-shadow: 1px 1px 1px #000, 2px 2px 3px rgb(253, 253, 244);
+
+  margin: 0px;
+}
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
+.center {
+  margin: auto;
+  width: 50%;
+  padding: 10px;
+  text-align: center;
+}
+
+#placeholder {
+  width: 80%;
+  padding-top: 3%;
+  height: auto;
+}
+
+#question {
+  margin-bottom: 2%;
+}
+
+#answer {
+  font-size: xxx-large;
+  font-weight: bolder;
+  font-style: oblique;
+  text-shadow: 1px 1px 1px #000, 3px 3px 5px rgb(253, 253, 244);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  box-shadow: 0 1px 2px rgba(0,0,0,0.07),
+                0 2px 4px rgba(0,0,0,0.07),
+                0 4px 8px rgba(0,0,0,0.07),
+                0 8px 16px rgba(0,0,0,0.07),
+                0 16px 32px rgba(0,0,0,0.07),
+                0 32px 64px rgba(0,0,0,0.07);
+
+  border-radius: 25px;
+  background: #ee7752;
+  /* background-blend-mode:saturation;*/
+
+  padding: 20px;
+  width: 200px;
+  height: 150px;
+}
+
+#short_explanation {
+  margin-top: 2%;
+}

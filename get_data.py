@@ -84,7 +84,7 @@ if reference_price >= avg_diesel:
   decrease_percent = float('{0:.3g}'.format(decrease_percent))
 
   answer_str = "NO!"
-  short_explanation_str = "Diesel price today is nice and {}% lower today :)".format(decrease_percent)
+  short_explanation_str = "Diesel price today is so nice to see {}% lower today than at the beginning of corona :)".format(decrease_percent)
 
   print("NO")
 else:
@@ -98,7 +98,7 @@ else:
   else:
     answer_str = "YES!"
 
-  short_explanation_str = "Diesel price higher {}% than at the beginning of corona.".format(increase_percent)
+  short_explanation_str = "Diesel price today is {}% higher than at the beginning of corona!".format(increase_percent)
 
   print("YES")
 
