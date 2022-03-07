@@ -78,6 +78,7 @@ avg_diesel_eur = float('{0:.3g}'.format(avg_diesel/eur_to_sek))
 
 local_index_filename = "index.html"
 local_index = get_file(local_index_filename)
+style_soup = local_index.find("head").find("link")
 
 # update answer
 
@@ -98,6 +99,8 @@ if reference_price >= avg_diesel:
   answer_str = "NO!"
   short_explanation_str = "Diesel price today is so nice to see {}% lower today than at the beginning of corona :)".format(decrease_percent)
 
+  style_soup['href'] = "style_green.css"
+
   print("NO")
 else:
 
@@ -107,8 +110,10 @@ else:
 
   if increase_percent >=50:
     answer_str = "HELL YES!"
+    style_soup['href'] = "style_red.css"
   else:
     answer_str = "YES!"
+    style_soup['href'] = "style_yellow.css"
 
   short_explanation_str = "Diesel price today is {}% higher than at the beginning of corona!".format(increase_percent)
 
