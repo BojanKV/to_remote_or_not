@@ -1,14 +1,21 @@
 body {
 	background: linear-gradient(-45deg, #ee7752, #e73c7e, rgb(253, 81, 43), rgb(255,0,0));
 	background-size: 400% 400%;
-	animation: gradient 15s ease infinite;
-	height: 100vh;
+	animation: gradient 10s ease infinite;
+
 
 	font-family: "Century Gothic", CenturyGothic, "Apple Gothic", sans-serif;
 	font-size: x-large;
-  text-shadow: 1px 1px 1px #000, 2px 2px 3px rgb(253, 253, 244);
+  text-shadow: 1px 1px 1px #000,
+               3px 3px 5px rgb(150, 150, 149),
+               3px 3px 5px rgb(150, 150, 149);
+
+  color:rgba(253, 253, 244, 0.85);
 
   margin: 0px;
+  height: 100vh;
+  display:flex;
+  flex-direction:column;
 }
 
 @keyframes gradient {
@@ -25,41 +32,39 @@ body {
 
 .center {
   margin: auto;
-  width: 50%;
+  width: 90%;
   padding: 10px;
   text-align: center;
 }
 
-#placeholder {
-  width: 80%;
-  padding-top: 3%;
-  height: auto;
-}
-
 #question {
+  width: auto;
   margin-bottom: 2%;
 }
 
 #answer {
+  width: auto;
+
   font-size: xxx-large;
   font-weight: bolder;
   font-style: oblique;
   text-shadow: 1px 1px 1px #000, 3px 3px 5px rgb(253, 253, 244);
+  color:rgb(253, 253, 244);
 
   display: flex;
   justify-content: center;
   align-items: center;
 
   box-shadow: 0 1px 2px rgba(0,0,0,0.07),
-                0 2px 4px rgba(0,0,0,0.07),
-                0 4px 8px rgba(0,0,0,0.07),
-                0 8px 16px rgba(0,0,0,0.07),
-                0 16px 32px rgba(0,0,0,0.07),
-                0 32px 64px rgba(0,0,0,0.07);
+              0 2px 4px rgba(0,0,0,0.07),
+              0 4px 8px rgba(0,0,0,0.07),
+              0 8px 16px rgba(0,0,0,0.07),
+              0 16px 32px rgba(0,0,0,0.07),
+              0 32px 64px rgba(0,0,0,0.07);
 
   border-radius: 25px;
-  background: #ee7752;
-  /* background-blend-mode:saturation;*/
+  background-color: rgba(238,119,82, 0.67);
+  background-blend-mode: luminosity;
 
   padding: 20px;
   width: 200px;
@@ -68,4 +73,97 @@ body {
 
 #short_explanation {
   margin-top: 2%;
+  margin-bottom: 2%;
+}
+
+#footer {
+  margin-top:auto;
+  width: 100v;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+
+  vertical-align: middle;
+
+  background: linear-gradient(0deg, #5e5957, #1c1719);
+	background-size: 200% 200%;
+	animation: gradient_footer 20s infinite;
+
+  font-size: medium;
+  text-shadow: 1px 1px 1px rgb(0, 0, 0),
+  1px 1px 2px rgb(94, 94, 94),
+  1px 1px 2px rgb(49, 49, 49);
+  color:rgb(199, 199, 199);
+
+  padding-left: 5%;
+  padding-right: 5%;
+}
+
+@keyframes gradient_footer {
+	0% {
+		background-position: 50% 0%;
+	}
+	50% {
+		background-position: 50% 100%;
+	}
+	100% {
+		background-position: 50% 0%;
+	}
+}
+
+.footer_box {
+  display: block;
+}
+
+#current_prices *{
+  font-family:Arial, Helvetica, sans-serif;
+  font-size: x-small;
+}
+
+#anything_else * {
+  font-family:Arial, Helvetica, sans-serif;
+  font-size: x-small;
+}
+
+@media only screen and (min-width: 768px) {
+
+  .footer_box {
+    min-width: 200px;
+    flex: 0 0 33%;
+    text-align: center;
+
+    padding:0px;
+  }
+
+  #current_prices {
+    flex: 0 0 23%;
+
+    margin: auto 0;
+  }
+
+  #this_is_disclaimer {
+    padding-top: 3px;
+    flex: 0 0 43%;
+  }
+
+  #this_is_disclaimer * {
+    display: inline-block;
+  }
+
+  #anything_else {
+    flex: 0 0 23%;
+  }
+
+  .regular_p, .small_p {
+    margin:0px;
+  }
+
+  .regular_p i {
+    text-decoration: underline;
+  }
+
+  .small_p {
+    width: 90%;
+    font-size: x-small;
+  }
 }
